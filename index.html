@@ -1,0 +1,47 @@
+﻿
+<!DOCTYPE HTML>
+<html ng-app="FootballApp">
+	<head>
+		<title>Optima</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+
+
+	</head>
+	<body>
+		
+	<section id="login" ng-controller="UserController">
+	<div class="loginContainer">
+		 <form name="loginform" validation data-ng-submit="getUserToken(loginform)"
+			method="post"
+			action=""
+			role="form">
+				<input class="inputC" type="text" placeholder="login" data-ng-model="loginform.login" required/>
+				<input class="inputC" type="text" placeholder="haslo" data-ng-model="loginform.pass" required/>
+					
+				 <button type="button"  class="buttonS"  data-ng-click="getUserToken(loginform)" >Wyślij</button>
+		 </form>
+	</div>
+ </section>
+	<section id="clubs" ng-controller="ClubsController">
+	<button class="button" ng-click="getMyClubs()" >Pokaż kluby</button>	
+	<h2>Cluby: {{clubs}}</h2>
+	<h3 ng-repeat="club in clubs">{{club.name}}</h1>
+	 </section>
+		<!-- Scripts -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		
+		<!-- Modules -->
+		<script src="js/app.js"></script>
+
+		<!-- Controllers -->
+		<script src="js/userController.js"></script>
+		<script src="js/clubsController.js"></script>
+		<!-- Services -->
+		<script src="js/clubsService.js"></script>
+		<script src="js/userService.js"></script>
+		
+	</body>
+</html>
